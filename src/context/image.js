@@ -4,10 +4,23 @@ import {
 } from "@dnd-kit/sortable";
 import { unsplashConfig } from '../imageConfig'
 import axios from "axios";
+import { auth } from '../firebase';
+import { onAuthStateChanged } from "firebase/auth";
 
 const ImageContext = createContext();
 
 function Provider ({ children }) {
+  const [user, setUser] = useState()
+
+  useEffect(()=>{
+    const listen = onAuthStateChanged(auth, (user)=>{
+      user && setUser(user)
+    })
+
+    return () =>{
+      listen()
+    }
+  }, [])
 
     const fetchImages = async () => {
         try {
@@ -66,6 +79,7 @@ function Provider ({ children }) {
        loading,
        onDragEnd,
        searchImages,
+       user,
     }
 
 

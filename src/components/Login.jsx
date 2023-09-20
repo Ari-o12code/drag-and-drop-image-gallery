@@ -23,6 +23,7 @@ const navigate = useNavigate();
     <div className='login-container'>
       <h2>Login</h2>
       <form className='form-container' onSubmit={handleLogin}>
+        <label>Email:</label>
         <input
           type="email"
           placeholder="Email"
@@ -30,6 +31,7 @@ const navigate = useNavigate();
           onChange={(e) => setEmail(e.target.value)}
           required 
         />
+        <label>Password:</label>
         <input
           type="password"
           placeholder="Password"

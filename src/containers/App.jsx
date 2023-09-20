@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import LoginPage from '../components/LoginPage';
 import GalleryPage from '../components/GalleryPage';
 import Login from '../components/Login';
+import PrivateRoute from '../components/PrivateRoute';
 
 
 function App() {
@@ -11,7 +12,9 @@ function App() {
       <Routes>
         <Route path="/"  element={<LoginPage />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/gallery" element={<GalleryPage />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/gallery" element={<GalleryPage />} />
+        </Route>
       </Routes>
     </Router>
   );

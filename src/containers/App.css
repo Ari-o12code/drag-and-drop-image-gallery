@@ -34,7 +34,7 @@
 
   .form-container{
     display: grid;
-    gap: 2em;
+    gap: 1em;
   }
 
   .form-container input{
@@ -64,7 +64,15 @@
   .form-container button:hover{
     background-color: #0056b3;
     border-color: #0056b3;
-    transform: scale(1.1);
+    transform: scale(1.02);
+  }
+
+  .form-container label{
+    color: white;
+    font-size: larger;
+    font-weight: 900;
+    place-self: start;
+    margin-top: 10px;
   }
 
   .error{
