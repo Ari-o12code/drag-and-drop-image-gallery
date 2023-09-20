@@ -20,9 +20,9 @@ const navigate = useNavigate();
   };
 
   return (
-    <div className='form-container'>
+    <div className='login-container'>
       <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+      <form className='form-container' onSubmit={handleLogin}>
         <input
           type="email"
           placeholder="Email"

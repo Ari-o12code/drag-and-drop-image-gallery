@@ -17,17 +17,16 @@ const GalleryImage = ({image}) => {
     transform: CSS.Transform.toString(transform),
   };
 
-  console.log(image)
-
   return (
     <div
       ref={setNodeRef}
       style={style}
       {...attributes}
       {...listeners}
+      className="image-card-container"
       >
-      <img src={image.urls.small} alt={image.alt_description} />
-      <p className="image-tag">{image.user.first_name}</p>
+      <img className="image-card" src={image.urls.small} alt={image.alt_description} />
+      <div className="image-tag">{image.user.first_name}</div>
     </div>
   )
 }

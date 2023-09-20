@@ -12,7 +12,7 @@ function Provider ({ children }) {
     const fetchImages = async () => {
         try {
           const response = await axios.get(
-            `${unsplashConfig.apiUrl}/photos/random/?count=12`,
+            `${unsplashConfig.apiUrl}/photos/random/?count=12&orientation=portrait`,
             {
               headers: {
                 Authorization: `Client-ID ${unsplashConfig.accessKey}`,

@@ -3,7 +3,7 @@ import GalleryList from "./GalleryList"
 
 const GalleryPage = () => {
   return (
-    <div>
+    <div className="gallery-page">
       <SearchBar />
       <GalleryList />
     </div>

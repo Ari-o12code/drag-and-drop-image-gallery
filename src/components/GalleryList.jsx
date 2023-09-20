@@ -19,7 +19,9 @@ const GalleryList = () => {
         <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd}>
           <SortableContext items={images} strategy={verticalListSortingStrategy}>
             {images.map((image) => (
-              <GalleryImage key={image.id} image={image} />
+              <div className="image" key={image.id}>
+                <GalleryImage image={image} />
+              </div>
             ))}
           </SortableContext>
         </DndContext>
